@@ -5,7 +5,7 @@
       <div class="col-2 bg-red login">
 
       </div>
-      <div class="col-10">
+      <div class="col-10 bg-showcase">
         <div class="row">
           <h1 class="col-12 login-header">BioPortal</h1>
         </div>
@@ -25,12 +25,17 @@
                 placeholder="email">
               <input class="form-control bg-transparent text-dark" type="password" v-model="newUser.password"
                 placeholder="password">
+
+              <input type="radio" v-model="newUser.flagged" value="distributor" checked> Distributor<br>
+              <input type="radio" v-model="newUser.flagged" value="doctor"> Doctor<br>
+              <input type="radio" v-model="newUser.flagged" value="hospital"> Hospital <br>
+
               <button class="btn btn-secondary" type="submit">Create Account</button>
             </form>
           </div>
           <div class="action col-12" @click="loginForm = !loginForm">
-            <!-- <p class="formstuff" v-if="loginForm">No account? Click here to Register</p>
-            <p class="formstuff" v-else>Already have an account? Click here to Login</p> -->
+            <p class="formstuff" v-if="loginForm">No account? Click here to Register</p>
+            <p class="formstuff" v-else>Already have an account? Click here to Login</p>
           </div>
         </div>
       </div>
@@ -54,7 +59,8 @@
         newUser: {
           email: "",
           password: "",
-          name: ""
+          name: "",
+          flagged: ""
         }
       };
     },
@@ -80,13 +86,17 @@
     margin-top: 250px;
   }
 
+  .bg-showcase {
+    background-color: whitesmoke;
+  }
+
   .bg-red {
-    background-color: rgb(199, 19, 19);
+    background-color: #ff0000;
   }
 
   .btn-bio {
     border-radius: 20px;
-    background-color: rgb(199, 19, 19);
+    background-color: #ff0000;
     border: none;
   }
 

@@ -15,7 +15,7 @@ var corsOptions = {
 };
 server.use(cors(corsOptions))
 //SET THE FRONT END
-server.use(express.static(__dirname + '/../client/dist'))
+// server.use(express.static(__dirname + '/../client/dist'))
 
 //Fire up database connection
 require('./db/gearhost-config')
@@ -45,7 +45,7 @@ server.use((req, res, next) => {
   next()
 })
 
-// let petOwnerRoutes = require('./server-assets/routes/petOwner')
+// let distributorRoutes = require('./server-assets/routes/distributor')
 // let pets = require('./server-assets/routes/pet')
 // let notes = require('./server-assets/routes/note')
 // let timeCard = require('./server-assets/routes/timeCard')
@@ -74,7 +74,7 @@ server.use('api/distributor', (req, res, next) => {
   next()
 })
 
-// server.use('/api/employee', petOwnerRoutes)
+//  
 // server.use('/api/employee', pets)
 // server.use('/api/employee', notes)
 // server.use('/api/employee', timeCard)

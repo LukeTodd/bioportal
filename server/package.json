@@ -15,5 +15,8 @@
     "burst biologics"
   ],
   "author": "Luke Todd",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

@@ -23,7 +23,7 @@ router.post('/auth/register', (req, res) => {
       delete user._doc.hash
       //SET THE SESSION UID (SHORT FOR USERID)
       req.session.uid = user._id
-      req.session.isDistributor = user.distributor
+      // req.session.isDistributor = user.distributor
       res.status(201).send(user)
     })
     .catch(err => {
@@ -47,7 +47,7 @@ router.post('/auth/login', (req, res) => {
       //ALWAYS REMOVE THE PASSWORD FROM THE USER OBJECT
       delete user._doc.hash
       req.session.uid = user._id
-      req.session.isDistributor = user.distributor
+      // req.session.isDistributor = user.distributor
       res.send(user)
     }).catch(err => {
       res.status(400).send(loginError)

@@ -12,7 +12,7 @@ let schema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   hash: { type: String, required: true },
-  distributor: { type: Boolean, default: false, required: true },
+  flagged: { type: String, enum: ["Distributor", "Hospital", "Doctor"], required: true },
 }, { timestamps: true })
 
 
